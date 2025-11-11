@@ -1,4 +1,3 @@
-const database = require('../models');
 
 class PessoaController {
   static async pegaTodas(req, res) {
