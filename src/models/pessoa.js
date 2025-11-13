@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Pessoa.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     nome: DataTypes.STRING,
     email: DataTypes.STRING,
     cpf: DataTypes.STRING,

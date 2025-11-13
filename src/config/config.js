@@ -1,15 +1,14 @@
-
 module.exports = {
   development: {
-    dialect: 'sqlite',
-    storage: './database.sqlite'
+    dialect: "sqlite",
+    storage: "./database.sqlite",
   },
   test: {
-    dialect: 'sqlite',
-    storage: 'src/database/test.sqlite'
+    dialect: "sqlite",
+    storage: "src/database/test.sqlite",
   },
   production: {
-    dialect: 'sqlite',
-    storage: 'src/database/prod.sqlite'
-  }
+    dialect: "sqlite",
+    storage: "src/database/prod.sqlite",
+  },
 };
