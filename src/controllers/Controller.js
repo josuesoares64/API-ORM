@@ -3,7 +3,6 @@ class Controller {
     this.entidadeService = entidadeService;
   }
 
-  // GET - Buscar todos os registros
   async pegaTodos(req, res) {
     try {
       const listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros();
@@ -13,7 +12,18 @@ class Controller {
     }
   }
 
-  // PUT - Atualizar um registro
+  // POST - Criar um novo registro
+  async criaNovo(req, res) {
+    const dados = req.body;
+
+    try {
+      const novoRegistro = await this.entidadeService.criaRegistro(dados);
+      return res.status(201).json(novoRegistro);
+    } catch (erro) {
+      return res.status(500).json({ erro: erro.message });
+    }
+  }
+
   async atualiza(req, res) {
     const { id } = req.params;
     const dadosAtualizados = req.body;
@@ -31,7 +41,7 @@ class Controller {
       }
 
       return res.status(200).json({
-        mensagem: "Registro atualizado com sucesso.",
+        mensagem: 'Registro atualizado com sucesso.',
         registro,
       });
     } catch (erro) {

@@ -20,7 +20,7 @@ class Services {
     if (!registro) return false;
 
     await database[this.nomeDoModelo].update(dadosAtualizados, {
-      where: { id },
+      where: { id }
     });
 
     return true;
