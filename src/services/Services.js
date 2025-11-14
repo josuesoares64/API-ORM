@@ -9,6 +9,10 @@ class Services {
     return await database[this.nomeDoModelo].findAll();
   }
 
+  async pegaUmRegistroPorId(id) {
+    return await database[this.nomeDoModelo].findOne({ where: { id } });
+  }
+
   async criaRegistro(dados) {
     return await database[this.nomeDoModelo].create(dados);
   }
